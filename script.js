@@ -11,6 +11,6 @@ stations.forEach(station => {
   listItem.textContent = station.Code; 
   stationList.appendChild(listItem);
 });
-//så tex: 
+//så tex något sånt här för varje station: 
 let agnesberg = stations[0].Code;
 console.log(agnesberg);
