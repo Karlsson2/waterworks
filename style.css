@@ -74,10 +74,12 @@
     margin-top: 4vh;
     color: #ffffff;
     padding: 10px;
+    font-family: 'Poppins', sans-serif;
   }
 
   .introduction p {
     font-size: 24px;
+    font-family: 'Poppins', sans-serif;
     margin-top: 2vh;
     color: #ffffff;
     padding: 10px;
