@@ -4,10 +4,15 @@ Object.keys(sessionStorage).forEach((key) => {
     station[key] = sessionStorage.getItem(key);
     
 });
-console.log(station);
+//console.log(station);
 const keys = Object.keys(station);
-console.log(keys[2]); // ordningen är olika för olika stationer?!! Så index 2 är nivå för en station men är long för en annan
-console.log(Object.keys(station));
+keys.forEach((key) => { //var tvungen att göra så här för annars får vi olika keys se nedan
+    if(key == 'Nivå'){
+        console.log(key);
+    }
+})
+//console.log(keys[2]); // ordningen är olika för olika stationer?!! Så index 2 är nivå för en station men är long för en annan
+//console.log(Object.keys(station));
 let stationName = sessionStorage.getItem('Description');
 let lat = sessionStorage.getItem('Lat');
 let long = sessionStorage.getItem('Long');
