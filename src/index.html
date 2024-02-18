@@ -5,8 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
     <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div class="header">
+
+    </div>
+    <!--- Kod för vågen och första rutan med intro osv -->
+    <div class="ocean-waves">
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="#d7e6fd"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(154,192,249,255)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(102,159,243,255)"
+          />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="introduction">
+        <h1>Mölndalsån &
+            Göta Älv</h1>
+        <p>Välj station för att se aktuella flöden och nivåer i Mölndalsån och Göta Älv.
+        </p>
+
+        <div class="arrow-down">&#8595;</div>
+    </div>
+
+    <h1>Stationer:</h1>
+    <ul id="station-list">
+
+    <!--- Första rutan END -->
+
     <div class="bg-river-blue w-screen h-screen">
       <h1 class="text-4xl text-white">Mölndalsån & Göta älv</h1>
     </div>
@@ -77,4 +143,5 @@
       </div>
     </div>
   </body>
+  <script src="script.js" type="module"></script>
 </html>
