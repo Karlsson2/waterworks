@@ -8,6 +8,7 @@ module.exports = {
         'surface-purple': '#E7E6FC',
         'safety-orange': '#DD7C1B',
         'sand': '#FAF7F7',
+        'deep-blue': '#2B007B',
         current: 'currentColor',
       },
       backgroundImage: {

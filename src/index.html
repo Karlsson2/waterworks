@@ -41,7 +41,7 @@
             xlink:href="#gentle-wave"
             x="48"
             y="0"
-            fill="#4D90F4"
+            fill="rgba(154,192,249,0.5)"
           />
           <use
             xlink:href="#gentle-wave"
@@ -58,26 +58,25 @@
             
             
           />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="#4D90F4" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(77, 144, 244)" />
         </g>
       </svg>
     </div>
 
-    <div class="w-screen h-screen bg-river-blue">
-      <div class="pl-8 pt-16">
-        <h1 class="text-sand font-bold">Mölndalsån &
-          Göta Älv</h1>
-          <p class="text-sand">Välj station för att se aktuella flöden och nivåer i Mölndalsån och Göta Älv.
-          </p>
+    <div class="w-screen h-screen bg-river-blue rounded-xl">
+      <div class="flex flex-col pl-8 pr-8 pt-20 gap-20 items-center">
+        <div>
+            <h1 class="text-sand text-4xl font-bold">Mölndalsån & Göta Älv</h1>
+            <p class="text-sand">Välj station för att se aktuella flöden och nivåer i Mölndalsån och Göta Älv.</p>
         </div>
+        <div class="text-sand">&#8595;</div>
 
-        <div class="arrow-down">&#8595;</div>
     </div>
 
     <!--- Första rutan END -->
 
     </div>
-    <div class="bg-river-img bg-center bg-no-repeat flex flex-col items-center" style="height: 3400px">
+    <div class="bg-river-img bg-center bg-no-repeat flex flex-col items-center mt-12" style="height: 3400px">
       <!-- Nedsjöns dämme -->
       <div class="flex flex-col items-center justify-end mr-16 gap-1 more-info" id="nedsjons" style="height: 6%">
         <img class="h-10" src="/src/img/location.png" alt="" />
@@ -89,18 +88,18 @@
         <img class="h-10" src="/src/img/location.png" alt="" />
       </div>
       <!-- Arketjärn -->
-      <div class="flex items-end justify-center ml-12 gap-1 more-info" id="arketjarn" style="height: 6%">
+      <div class="flex flex-col items-center justify-end ml-12 gap-1 more-info" id="arketjarn" style="height: 6%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Arketjärn</p></div>
       </div>
       <!-- Landvettersjöns dämme -->
-      <div class="flex flex-col items-center justify-center ml-10 gap-1 more-info" id="landvettersjons" style="height: 4.5%">
+      <div class="flex flex-col items-center justify-end gap-1 more-info" id="landvettersjons" style="height: 3.5%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Landvettersjöns dämme</p></div>
       </div>
       <!-- Rådasjön -->
-      <div class="flex flex-col items-center justify-end gap-1 more-info" id="radasjon" style="height: 2.5%">
+      <div class="flex flex-col items-center justify-end gap-1 more-info" id="radasjon" style="height: 3.5%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Rådasjön</p></div>
       </div>
@@ -116,37 +115,42 @@
         </a>
       </div>
       <!-- Mölndal C -->
-      <div class="flex items-end justify-center ml-10 gap-1 more-info" id="molndal" style="height: 4%">
+      <div class="flex items-end justify-center ml-10 gap-1 more-info" id="molndal" style="height: 3.5%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Mölndal C</p></div>
       </div>
       <!-- Skårs led -->
-      <div class="flex items-end justify-center mr-8 gap-1 more-info" id="skars" style="height: 4.5%">
+      <div class="flex items-end justify-center mr-8 gap-1 more-info" id="skars" style="height: 4%">
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Skårs led</p></div>
         <img class="h-10" src="/src/img/location.png" alt="" />
       </div>
       <!-- Levgrensvägen -->
-      <div class="flex items-end justify-center ml-20 gap-1 more-info" id="levgrensvagen" style="height: 4.5%">
+      <div class="flex items-end justify-center ml-20 gap-1 more-info" id="levgrensvagen" style="height: 4%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Levgrensvägen</p></div>
       </div>
       <!-- Gårda dämme -->
-      <div class="flex items-end justify-center mr-16 gap-1 more-info" id="garda" style="height: 4.5%">
+      <div class="flex items-end justify-center mr-20 gap-1 more-info" id="garda" style="height: 4%">
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Gårda dämme</p></div>
         <img class="h-10" src="/src/img/location.png" alt="" />
       </div>
       <!-- Slussen -->
-      <div class="flex items-end justify-center mr-60 gap-1 more-info" id="slussen" style="height: 3.5%">
+      <div class="flex items-end justify-center ml-10 gap-1 more-info" id="slussen" style="height: 3.5%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Slussen</p></div>
       </div>
       <!-- Agnesberg -->
-      <div class="flex items-end justify-center mr-32 gap-1 more-info" id="agnesberg" style="height: 3.5%">
+      <div class="flex items-end justify-center mr-60 gap-1 more-info" id="agnesberg" style="height: 2%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Agnesberg</p></div>
       </div>
+      <!-- Lärjeholm -->
+      <div class="flex items-end justify-center mr-32 gap-1 more-info" id="larjeholm" style="height: 3.5%">
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Lärjeholm</p></div>
+      </div>
       <!-- Tingstad -->
-      <div class="flex items-end justify-center mr-36 gap-1 more-info" id="tingstad" style="height: 3.5%">
+      <div class="flex items-end justify-center mr-32 gap-1 more-info" id="tingstad" style="height: 3.5%">
         <img class="h-10" src="/src/img/location.png" alt="" />
         <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Tingstad</p></div>
       </div>
@@ -159,8 +163,8 @@
   
       <!-- Torshamnen -->
       <div class="flex flex-col items-center justify-end gap-1" style="height: 12%">
-        <img class="h-10" src="/src/img/location.png" alt="" />
-        <div class="bg-sand rounded-xl p-3 drop-shadow-md"><p>Torshamnen</p></div>
+        <img class="h-10 z-20" src="/src/img/location.png" alt="" />
+        <div class="bg-sand rounded-xl p-3 drop-shadow-md z-20"><p>Torshamnen</p></div>
       </div>
        <!--Bubble animations -->
       <section class="flex flex-col justify-center" style="height: 8%; width: 390px;">
