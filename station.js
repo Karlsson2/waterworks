@@ -6,6 +6,32 @@ let long = sessionStorage.getItem("Long");
 let stationTitle = document.getElementById("station-name");
 let stationLat = document.getElementById("station-lat");
 let stationLong = document.getElementById("station-long");
+let menuItems = document.querySelectorAll(".item");
+let itemCards = document.querySelectorAll('.card');
+console.log(menuItems);
+menuItems.forEach((divs, index) => {
+  console.log(divs);
+  divs.addEventListener('click', () => {
+    console.log(divs);
+    /* menuItemDivs.forEach((item) => {
+      if(item.classList.contains('show')){
+        item.classList.add('hide');
+        item.classList.remove('show');
+      }else {
+        divs.classList.add('hide');
+        divs.classList.remove('show');
+      }
+    }) */
+    if(itemCards[index].classList.contains('hide')){
+      itemCards[index].classList.remove('hide');
+      itemCards[index].classList.add('show');
+    }else {
+      itemCards[index].classList.add('hide');
+      itemCards[index].classList.remove('show');
+    }
+  })
+})
+
 
 //import { getLevel } from "./menu";
 let station = {};
@@ -20,8 +46,16 @@ keys.forEach((key) => {
   if (key == "Nivå") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
-    menuItemDiv.classList.add("level");
+    
     menu.appendChild(menuItemDiv);
+
+    menuItemDiv.classList.add("level");
+    menuItemDiv.classList.add('item');
+    
+
+   
+
+
 
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
@@ -32,7 +66,6 @@ keys.forEach((key) => {
 
     let dataDiv = document.createElement("div");
     if ("DG" in station) {
-      console.log("test");
       let dgDiv = document.createElement("div");
       dgDiv.innerText = station.DG;
       dataDiv.appendChild(dgDiv);
@@ -47,13 +80,19 @@ keys.forEach((key) => {
     dataDiv.appendChild(levelDiv);
     cardDiv.appendChild(dataDiv);
     cardDiv.classList.add("level");
+    cardDiv.classList.add("show");
+    
     cards.appendChild(cardDiv);
   }
   if (key == "Tappning") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
     menuItemDiv.classList.add("tapping");
+    menuItemDiv.classList.add('menuItem');
     menu.appendChild(menuItemDiv);
+
+
+    
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = key;
@@ -64,16 +103,25 @@ keys.forEach((key) => {
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
     cardDiv.classList.add("tapping");
+    cardDiv.classList.add("hide");
     cardDiv.appendChild(titleDiv);
     cardDiv.appendChild(dataDiv);
     cardDiv.appendChild(dataTypeDiv);
     cards.appendChild(cardDiv);
+
+
+
   }
   if (key == "Nederbörd") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
     menuItemDiv.classList.add("precipitation");
+    menuItemDiv.classList.add('menuItem');
     menu.appendChild(menuItemDiv);
+
+   
+
+
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = key;
@@ -84,7 +132,7 @@ keys.forEach((key) => {
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
     cardDiv.classList.add("precipitation");
-
+    cardDiv.classList.add("hide");
     cardDiv.appendChild(titleDiv);
     cardDiv.appendChild(dataDiv);
     cardDiv.appendChild(dataTypeDiv);
@@ -94,7 +142,13 @@ keys.forEach((key) => {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
     menuItemDiv.classList.add("downstream");
+    menuItemDiv.classList.add('menuItem');
+
     menu.appendChild(menuItemDiv);
+
+  
+
+
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = key;
@@ -106,13 +160,15 @@ keys.forEach((key) => {
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
     cardDiv.classList.add("downstream");
-
+    cardDiv.classList.add("hide");
     cardDiv.appendChild(titleDiv);
     cardDiv.appendChild(dataDiv);
     cardDiv.appendChild(dataTypeDiv);
     cards.appendChild(cardDiv);
   }
 });
+
+
 
 //console.log(keys[2]); // ordningen är olika för olika stationer?!! Så index 2 är nivå för en station men är long för en annan
 //console.log(Object.keys(station));
