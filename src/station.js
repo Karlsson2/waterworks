@@ -15,7 +15,7 @@ let itemCards = document.querySelectorAll(".card");
 //import { getLevel } from "./menu";
 
 /*---------BYTER TILL LOCALSTORAGE------------*/
-let station = {}; 
+let station = {};
 Object.keys(localStorage).forEach((key) => {
   station[key] = localStorage.getItem(key);
 });
@@ -31,6 +31,7 @@ function createMenuCard(key, dataType, unit, station) {
   menuItemDiv.innerText = key;
   menuItemDiv.classList.add("item");
   menuItemDiv.classList.add(key.toLowerCase().replace(/\s/g, "-"));
+  key === "Nivå" && menuItemDiv.classList.add("active");
 
   menu.appendChild(menuItemDiv);
 
@@ -43,25 +44,28 @@ function createMenuCard(key, dataType, unit, station) {
   let cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
   cardDiv.classList.add(key.toLowerCase().replace(/\s/g, "-"));
-  cardDiv.classList.add("hide");
+  key === "Nivå"
+    ? cardDiv.classList.add("show")
+    : cardDiv.classList.add("hide");
+
   cardDiv.appendChild(titleDiv);
   cardDiv.appendChild(dataDiv);
   cardDiv.appendChild(dataTypeDiv);
   cards.appendChild(cardDiv);
 }
 
-keys.forEach(key => {
+keys.forEach((key) => {
   if (key === "Tappning" || key === "Nederbörd") {
     let unit = "m";
     let valueType = key === "Tappning" ? "m3/s" : "mm/d";
     createMenuCard(key, unit, valueType, station);
-  }else if(key === "Nivå" || key === "Nivå nedströms"){ //Jag vet inte om vi vill ens ha någon mätkonstant som "m" eller inte
+  } else if (key === "Nivå" || key === "Nivå nedströms") {
+    //Jag vet inte om vi vill ens ha någon mätkonstant som "m" eller inte
     let unit = "m";
     let valueType = "m";
     createMenuCard(key, unit, valueType, station);
   }
 });
-
 
 /*-----------------OLD NON-DRY CODE--------------------- */
 /* keys.forEach((key) => {  
@@ -172,14 +176,17 @@ keys.forEach(key => {
   }
 }); */
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  
-
   let menuItems = document.querySelectorAll(".item");
   let itemCards = document.querySelectorAll(".card");
-  menuItems.forEach((divs, index) => {
-    divs.addEventListener("click", () => {
+  menuItems.forEach((menuItem, index) => {
+    menuItem.addEventListener("click", () => {
+      menuItems.forEach((menuItem) => {
+        if (menuItem.classList.contains("active")) {
+          menuItem.classList.remove("active");
+        }
+      });
+      menuItem.classList.add("active");
       itemCards.forEach((item) => {
         if (item.classList.contains("show")) {
           item.classList.add("hide");
