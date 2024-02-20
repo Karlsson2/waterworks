@@ -1,3 +1,4 @@
+
 * {
   padding: 0;
   margin: 0;
@@ -67,7 +68,6 @@
     margin-top: 10px;
     height: 760px;
     border-radius: 0 0 22px 22px;
-    /*position: fixed;*/
   }
 
   .introduction h1 {
@@ -200,3 +200,4 @@
     transform:translateX(-200px);
   }
 }
+
