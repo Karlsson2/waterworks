@@ -1,24 +1,70 @@
+/* create nodes in the DOM */
 let menu = document.getElementById("menu");
 let cards = document.querySelector(".cards");
-let stationName = sessionStorage.getItem("Description");
-let lat = sessionStorage.getItem("Lat");
-let long = sessionStorage.getItem("Long");
+//let stationName = sessionStorage.getItem("Description");
+let stationName = localStorage.getItem("Description");
+//let lat = sessionStorage.getItem("Lat");
+let lat = localStorage.getItem("Lat");
+//let long = sessionStorage.getItem("Long");
+let long = localStorage.getItem("Long");
 let stationTitle = document.getElementById("station-name");
 let stationLat = document.getElementById("station-lat");
 let stationLong = document.getElementById("station-long");
 let menuItems = document.querySelectorAll(".item");
 let itemCards = document.querySelectorAll(".card");
-
 //import { getLevel } from "./menu";
-let station = {};
-Object.keys(sessionStorage).forEach((key) => {
-  station[key] = sessionStorage.getItem(key);
-});
-//console.log(station);
-const keys = Object.keys(station);
 
-keys.forEach((key) => {
-  //var tvungen att göra så här för annars får vi olika keys se nedan
+/*---------BYTER TILL LOCALSTORAGE------------*/
+let station = {}; 
+Object.keys(localStorage).forEach((key) => {
+  station[key] = localStorage.getItem(key);
+});
+/* Object.keys(sessionStorage).forEach((key) => {
+  station[key] = sessionStorage.getItem(key);
+}); */
+/*---------BYTER TILL LOCALSTORAGE------------*/
+
+const keys = Object.keys(station);
+/*-----------------FUNCTION FOR THE CARD CREATION----------------------*/
+function createMenuCard(key, dataType, unit, station) {
+  let menuItemDiv = document.createElement("div");
+  menuItemDiv.innerText = key;
+  menuItemDiv.classList.add("item");
+  menuItemDiv.classList.add(key.toLowerCase().replace(/\s/g, "-"));
+
+  menu.appendChild(menuItemDiv);
+
+  let titleDiv = document.createElement("div");
+  titleDiv.innerText = key;
+  let dataDiv = document.createElement("div");
+  let dataTypeDiv = document.createElement("div");
+  dataTypeDiv.innerText = unit;
+  dataDiv.innerText = station[key];
+  let cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+  cardDiv.classList.add(key.toLowerCase().replace(/\s/g, "-"));
+  cardDiv.classList.add("hide");
+  cardDiv.appendChild(titleDiv);
+  cardDiv.appendChild(dataDiv);
+  cardDiv.appendChild(dataTypeDiv);
+  cards.appendChild(cardDiv);
+}
+
+keys.forEach(key => {
+  if (key === "Tappning" || key === "Nederbörd") {
+    let unit = "m";
+    let valueType = key === "Tappning" ? "m3/s" : "mm/d";
+    createMenuCard(key, unit, valueType, station);
+  }else if(key === "Nivå" || key === "Nivå nedströms"){ //Jag vet inte om vi vill ens ha någon mätkonstant som "m" eller inte
+    let unit = "m";
+    let valueType = "m";
+    createMenuCard(key, unit, valueType, station);
+  }
+});
+
+
+/*-----------------OLD NON-DRY CODE--------------------- */
+/* keys.forEach((key) => {  
   if (key == "Nivå") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
@@ -124,10 +170,11 @@ keys.forEach((key) => {
     cardDiv.appendChild(dataTypeDiv);
     cards.appendChild(cardDiv);
   }
-});
+}); */
+
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Your code here
+  
 
   let menuItems = document.querySelectorAll(".item");
   let itemCards = document.querySelectorAll(".card");
