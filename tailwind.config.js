@@ -12,7 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         'river-img': "url('/src/img/river.png')",
-      }
+      },
     },
   },
   plugins: [],
