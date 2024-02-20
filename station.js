@@ -7,31 +7,7 @@ let stationTitle = document.getElementById("station-name");
 let stationLat = document.getElementById("station-lat");
 let stationLong = document.getElementById("station-long");
 let menuItems = document.querySelectorAll(".item");
-let itemCards = document.querySelectorAll('.card');
-console.log(menuItems);
-menuItems.forEach((divs, index) => {
-  console.log(divs);
-  divs.addEventListener('click', () => {
-    console.log(divs);
-    /* menuItemDivs.forEach((item) => {
-      if(item.classList.contains('show')){
-        item.classList.add('hide');
-        item.classList.remove('show');
-      }else {
-        divs.classList.add('hide');
-        divs.classList.remove('show');
-      }
-    }) */
-    if(itemCards[index].classList.contains('hide')){
-      itemCards[index].classList.remove('hide');
-      itemCards[index].classList.add('show');
-    }else {
-      itemCards[index].classList.add('hide');
-      itemCards[index].classList.remove('show');
-    }
-  })
-})
-
+let itemCards = document.querySelectorAll(".card");
 
 //import { getLevel } from "./menu";
 let station = {};
@@ -46,16 +22,10 @@ keys.forEach((key) => {
   if (key == "Nivå") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
-    
+
     menu.appendChild(menuItemDiv);
-
+    menuItemDiv.classList.add("item");
     menuItemDiv.classList.add("level");
-    menuItemDiv.classList.add('item');
-    
-
-   
-
-
 
     let cardDiv = document.createElement("div");
     cardDiv.classList.add("card");
@@ -81,18 +51,16 @@ keys.forEach((key) => {
     cardDiv.appendChild(dataDiv);
     cardDiv.classList.add("level");
     cardDiv.classList.add("show");
-    
+
     cards.appendChild(cardDiv);
   }
   if (key == "Tappning") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
+    menuItemDiv.classList.add("item");
     menuItemDiv.classList.add("tapping");
-    menuItemDiv.classList.add('menuItem');
+
     menu.appendChild(menuItemDiv);
-
-
-    
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = key;
@@ -108,20 +76,14 @@ keys.forEach((key) => {
     cardDiv.appendChild(dataDiv);
     cardDiv.appendChild(dataTypeDiv);
     cards.appendChild(cardDiv);
-
-
-
   }
   if (key == "Nederbörd") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
+    menuItemDiv.classList.add("item");
     menuItemDiv.classList.add("precipitation");
-    menuItemDiv.classList.add('menuItem');
+
     menu.appendChild(menuItemDiv);
-
-   
-
-
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = key;
@@ -141,14 +103,10 @@ keys.forEach((key) => {
   if (key == "Nivå nedströms") {
     let menuItemDiv = document.createElement("div");
     menuItemDiv.innerText = key;
+    menuItemDiv.classList.add("item");
     menuItemDiv.classList.add("downstream");
-    menuItemDiv.classList.add('menuItem');
 
     menu.appendChild(menuItemDiv);
-
-  
-
-
 
     let titleDiv = document.createElement("div");
     titleDiv.innerText = key;
@@ -168,7 +126,32 @@ keys.forEach((key) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Your code here
 
+  let menuItems = document.querySelectorAll(".item");
+  let itemCards = document.querySelectorAll(".card");
+  menuItems.forEach((divs, index) => {
+    divs.addEventListener("click", () => {
+      itemCards.forEach((item) => {
+        if (item.classList.contains("show")) {
+          item.classList.add("hide");
+          item.classList.remove("show");
+        } else {
+          item.classList.add("hide");
+          item.classList.remove("show");
+        }
+      });
+      if (itemCards[index].classList.contains("hide")) {
+        itemCards[index].classList.remove("hide");
+        itemCards[index].classList.add("show");
+      } else {
+        itemCards[index].classList.add("hide");
+        itemCards[index].classList.remove("show");
+      }
+    });
+  });
+});
 
 //console.log(keys[2]); // ordningen är olika för olika stationer?!! Så index 2 är nivå för en station men är long för en annan
 //console.log(Object.keys(station));
