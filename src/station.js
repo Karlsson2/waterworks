@@ -39,8 +39,32 @@ function createMenuCard(key, dataType, unit, station) {
   titleDiv.innerText = key;
   let dataDiv = document.createElement("div");
   let dataTypeDiv = document.createElement("div");
-  dataTypeDiv.innerText = unit;
-  dataDiv.innerText = station[key];
+
+  if (key == "Nivå") {
+    if ("DG" in station) {
+      let dgDiv = document.createElement("div");
+      dgDiv.innerText = "Övre: " + station.DG;
+      dataDiv.appendChild(dgDiv);
+    }
+    levelDiv = document.createElement("div");
+    level = document.createElement("div");
+    level.innerText = station.Nivå;
+    dataTypeDiv.innerText = unit;
+    levelDiv.appendChild(level);
+    levelDiv.appendChild(dataTypeDiv);
+    levelDiv.classList.add("level-div");
+    dataDiv.appendChild(levelDiv);
+
+    if ("SG" in station) {
+      let sgDiv = document.createElement("div");
+      sgDiv.innerText = "Undre: " + station.SG;
+      dataDiv.appendChild(sgDiv);
+    }
+  } else {
+    dataDiv.innerText = station[key];
+  }
+  key !== "Nivå" && (dataTypeDiv.innerText = unit);
+
   let cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
   cardDiv.classList.add(key.toLowerCase().replace(/\s/g, "-"));
@@ -50,7 +74,7 @@ function createMenuCard(key, dataType, unit, station) {
 
   cardDiv.appendChild(titleDiv);
   cardDiv.appendChild(dataDiv);
-  cardDiv.appendChild(dataTypeDiv);
+  key !== "Nivå" && cardDiv.appendChild(dataTypeDiv);
   cards.appendChild(cardDiv);
 }
 
