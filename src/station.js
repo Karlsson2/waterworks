@@ -13,7 +13,7 @@ let stationLong = document.getElementById("station-long");
 let menuItems = document.querySelectorAll(".item");
 let itemCards = document.querySelectorAll(".card");
 
-const downStream =  `
+const downStream = `
 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 461.941 461.941" xml:space="preserve">
     <g>
         <path d="M94.42,143.113c8.82-8.82,23.171-8.82,31.993,0c24.416,24.416,64.145,24.416,88.561,0
@@ -29,23 +29,19 @@ const downStream =  `
     </g>
 </svg>
 `;
-const cardStyles = [ 
-"flex",
-"flex-col",
-"items-center",
-"gap-8",
-"p-8",
-"bg-sand",
-"rounded-2xl",
-"h-[25rem]",
-"w-full",
-"max-w-96"
- ];
-const titldeDivStyles = [
-  "text-deep-blue",
-  "text-4xl",
-  "font-bold"
+const cardStyles = [
+  "flex",
+  "flex-col",
+  "items-center",
+  "gap-8",
+  "p-8",
+  "bg-sand",
+  "rounded-2xl",
+  "h-[25rem]",
+  "w-full",
+  "max-w-96",
 ];
+const titldeDivStyles = ["text-deep-blue", "text-4xl", "font-bold"];
 const levelDataStyles = [
   "flex",
   "flex-col",
@@ -56,7 +52,7 @@ const levelDataStyles = [
   "w-64",
   "border-4",
   "border-deep-blue",
-  "bg-[url('/src/img/waterlevel.png')]"
+  "bg-[url('/src/img/waterlevel.png')]",
 ];
 
 //import { getLevel } from "./menu";
@@ -84,66 +80,77 @@ function createMenuCard(key, dataType, unit, station) {
   titleDiv.classList.add(...titldeDivStyles);
   let dataDiv = document.createElement("div");
   let dataTypeDiv = document.createElement("div");
-  dataTypeDiv.classList.add("text-xl" , "font-semibold");
+  dataTypeDiv.classList.add("text-xl", "font-semibold");
 
   if (key == "Nivå") {
     if ("DG" in station) {
       let dgDiv = document.createElement("div");
       dgDiv.innerText = "Övre: " + station.DG;
-      dgDiv.classList.add("font-semibold","text-xl","text-river-blue");
+      dgDiv.classList.add("font-semibold", "text-xl", "text-river-blue");
       dataDiv.appendChild(dgDiv);
     }
     levelDiv = document.createElement("div");
     level = document.createElement("div");
-    station.Nivå == 'undefined' ? level.innerText = 'Okänt' : level.innerText = station.Nivå;
-    
-    level.classList.add("text-6xl","font-bold");
+    station.Nivå == "undefined"
+      ? (level.innerText = "Okänt")
+      : (level.innerText = station.Nivå);
+
+    level.classList.add("text-6xl", "font-bold");
     dataTypeDiv.innerText = unit;
+    dataTypeDiv.classList.add("valuetype-div");
     levelDiv.appendChild(level);
     levelDiv.appendChild(dataTypeDiv);
     levelDiv.classList.add("level-div");
     dataDiv.appendChild(levelDiv);
-    levelDiv.classList.add(...levelDataStyles);
+    dataDiv.classList.add(...levelDataStyles);
 
     if ("SG" in station) {
       let sgDiv = document.createElement("div");
       sgDiv.innerText = "Undre: " + station.SG;
-      sgDiv.classList.add("font-semibold","text-xl","text-sand");
+      sgDiv.classList.add("font-semibold", "text-xl", "text-sand");
       dataDiv.appendChild(sgDiv);
     }
   } else {
-    dataDiv.innerText = station[key];
-    dataDiv.classList.add('flex', 'text-8xl', 'font-bold');
+    levelDiv = document.createElement("div");
+    level = document.createElement("div");
+    level.innerText = station[key];
+
+    dataDiv.classList.add("flex", "text-8xl", "font-bold");
+    dataTypeDiv.innerText = unit;
+    dataTypeDiv.classList.add("valuetype-div-other");
+    levelDiv.appendChild(dataTypeDiv);
+    levelDiv.appendChild(level);
+    levelDiv.classList.add("level-div");
+
+    dataDiv.appendChild(levelDiv);
   }
-  key !== "Nivå" && (dataTypeDiv.innerText = unit);
 
   let cardDiv = document.createElement("div");
-  
+
   cardDiv.classList.add("card");
   cardDiv.classList.add(...cardStyles);
   cardDiv.classList.add(key.toLowerCase().replace(/\s/g, "-"));
   key === "Nivå"
     ? cardDiv.classList.add("show")
     : cardDiv.classList.add("hide");
-    console.log(key);
+  console.log(key);
   cardDiv.appendChild(titleDiv);
-  if(key === 'Tappning' ){
-    let svg = document.createElement('img');
-    svg.src= '/src/img/tap.png';
-  cardDiv.appendChild(svg);
-}else if (key === 'Nivå nedströms') {
-  let svg = document.createElement('img');
-  svg.src = '/src/img/waves.png';
-  cardDiv.appendChild(svg);
-}
-  else if (key === 'Nederbörd'){
-    let svg = document.createElement('img');
-    svg.src= '/src/img/rain.png';
-  cardDiv.appendChild(svg);
+  if (key === "Tappning") {
+    let svg = document.createElement("img");
+    svg.src = "/src/img/tap.png";
+    cardDiv.appendChild(svg);
+  } else if (key === "Nivå nedströms") {
+    let svg = document.createElement("img");
+    svg.src = "/src/img/waves.png";
+    cardDiv.appendChild(svg);
+  } else if (key === "Nederbörd") {
+    let svg = document.createElement("img");
+    svg.src = "/src/img/rain.png";
+    cardDiv.appendChild(svg);
   }
-  
+
   cardDiv.appendChild(dataDiv);
-  key !== "Nivå" && cardDiv.appendChild(dataTypeDiv);
+
   cards.appendChild(cardDiv);
 }
 
@@ -304,5 +311,5 @@ document.addEventListener("DOMContentLoaded", function () {
 //console.log(Object.keys(station));
 
 stationTitle.innerText = stationName;
-stationLat.innerText =  " " + lat;
+stationLat.innerText = " " + lat;
 stationLong.innerText = " " + long;
