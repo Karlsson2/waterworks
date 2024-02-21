@@ -3,15 +3,6 @@ const apiUrl =
 
 let outsideVariable;
 
-//Båda fetcharna fungerar, vet inte om det är skillnad i effektivitet eller nåt sånt men vi väljer väl ena av dem:
- 
-/* async function fetchData() {
-  const response = await fetch(apiUrl);
-  const data = await response.json();
-  return data;
-}
-outsideVariable = await fetchData();
- */
 
 function fetchData() {
   return fetch(apiUrl)
@@ -19,6 +10,7 @@ function fetchData() {
     .then(data => {return data;})    
 }
 
-outsideVariable = await fetchData();
 
+
+outsideVariable = await fetchData();
 export { outsideVariable };
