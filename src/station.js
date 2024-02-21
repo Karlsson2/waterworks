@@ -80,7 +80,7 @@ function createMenuCard(key, dataType, unit, station) {
   titleDiv.classList.add(...titldeDivStyles);
   let dataDiv = document.createElement("div");
   let dataTypeDiv = document.createElement("div");
-  dataTypeDiv.classList.add("text-xl", "font-semibold");
+  dataTypeDiv.classList.add("text-xl", "font-semibold", "mt-8");
 
   if (key == "Nivå") {
     if ("DG" in station) {
@@ -118,9 +118,10 @@ function createMenuCard(key, dataType, unit, station) {
     dataDiv.classList.add("flex", "text-8xl", "font-bold");
     dataTypeDiv.innerText = unit;
     dataTypeDiv.classList.add("valuetype-div-other");
-    levelDiv.appendChild(dataTypeDiv);
     levelDiv.appendChild(level);
-    levelDiv.classList.add("level-div");
+    levelDiv.appendChild(dataTypeDiv);
+
+    levelDiv.classList.add("level-div-other");
 
     dataDiv.appendChild(levelDiv);
   }
