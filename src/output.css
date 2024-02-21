@@ -584,10 +584,6 @@ html {
   margin-right: 2rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .flex {
   display: flex;
 }
@@ -663,28 +659,8 @@ html {
   padding: 0.75rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
-.pr-8 {
-  padding-right: 2rem;
-}
-
 .pl-8 {
   padding-left: 2rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
-}
-
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
-.pt-12 {
-  padding-top: 3rem;
 }
 
 .pt-16 {
@@ -693,14 +669,6 @@ html {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-medium {
-  font-weight: 500;
-}
-
-.font-semibold {
-  font-weight: 600;
 }
 
 .text-sand {
