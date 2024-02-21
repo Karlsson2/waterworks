@@ -95,8 +95,20 @@
 .arrow-down {
   text-align: center;
   color: #ffffff;
-  font-size: 30px;
-  margin-top: 35px;
+  font-size: 5vh;
+  margin-top: 30%;
+
+  animation: bouncing 2s infinite;
+  animation-delay: .5s;
+}
+
+@keyframes bouncing {
+  0%, 40%, 100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-30px);
+  }
 }
 
 .bubbles {
