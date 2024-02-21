@@ -309,7 +309,7 @@
   display: none;
 }
 .show {
-  display: block;
+  display: flex;
 }
 
 #menu {
@@ -329,8 +329,6 @@
   top: 40%;
   right: -20px;
 }
-.valuetype-div-other {
-  position: absolute;
-  top: 40%;
-  right: -50px;
+.level-div-other {
+  display: flex;
 }
