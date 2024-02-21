@@ -213,9 +213,7 @@
   gap: 10px;
 }
 
-.card {
-  background: red;
-}
+
 .active {
   font-weight: bold;
 }

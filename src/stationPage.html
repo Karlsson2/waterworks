@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="Stylesheet" href="style.css">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
     <title>Station</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <h1 class="station-name" id="station-name"></h1>
+  <body class="bg-surface-purple text-deep-blue">
+    <div class="main flex flex-col items-center  pr-8 pl-8 gap-8">
+      <div class="heading mt-16 flex flex-col gap-4">
+      <h1 class="station-name text-4xl font-bold" id="station-name"></h1>
 
-    <p id="station-lat">Lat:</p>
-    <p id="station-long">Long:</p>
-
-    <div id="menu"></div>
-    <div class="cards"></div>
-
+      <p class=" font-semibold">Lat:<span id="station-lat" class="font-normal"></span>°</p>
+      <p class=" font-semibold">Long:<span id="station-long" class="font-normal"></span>°</p>
+      </div>
+      <div id="menu" class="flex gap-4"></div>
+      <div class="cards"></div>
+    </div>
     <script src="station.js"></script>
   </body>
 </html>
