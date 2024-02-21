@@ -321,3 +321,16 @@
 .active {
   font-weight: bold;
 }
+.level-div {
+  position: relative;
+}
+.valuetype-div {
+  position: absolute;
+  top: 40%;
+  right: -20px;
+}
+.valuetype-div-other {
+  position: absolute;
+  top: 40%;
+  right: -50px;
+}
