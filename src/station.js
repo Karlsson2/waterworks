@@ -5,7 +5,10 @@ backBtn.classList.add('back', 'ml-10', 'mt-4');
 let backAnchor = document.createElement('a');
 backAnchor.href = '/src/index.html';
 let arrowImg = document.createElement('img');
-arrowImg.src = '/src/img/formkit_arrowleft.png';
+arrowImg.classList.add('arrowImg');
+arrowImg.src = '/src/img/left-arrow-back-svgrepo-com.png';
+//arrowImg.src = '/src/img/formkit_arrowleft.png';
+arrowImg.style = 'width: 5%';
 backAnchor.appendChild(arrowImg);
 backBtn.appendChild(backAnchor);
 var firstChild = document.body.firstChild; // get the first child of the body to be able to put the back btn before it
