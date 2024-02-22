@@ -582,6 +582,22 @@ html {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
 .ml-10 {
   margin-left: 2.5rem;
 }
@@ -618,12 +634,18 @@ html {
   margin-top: 4rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
 .mt-4 {
   margin-top: 1rem;
 }
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -644,6 +666,18 @@ html {
   height: 100vh;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
 .w-64 {
   width: 16rem;
 }
@@ -656,8 +690,36 @@ html {
   width: 100vw;
 }
 
-.min-w-full {
-  min-width: 100%;
+.w-72 {
+  width: 18rem;
+}
+
+.w-60 {
+  width: 15rem;
+}
+
+.w-56 {
+  width: 14rem;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .min-w-96 {
@@ -666,6 +728,10 @@ html {
 
 .max-w-96 {
   max-width: 24rem;
+}
+
+.origin-center {
+  transform-origin: center;
 }
 
 .flex-col {
@@ -720,6 +786,10 @@ html {
   border-radius: 0.75rem;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .border-4 {
   border-width: 4px;
 }
@@ -744,12 +814,27 @@ html {
   background-color: rgb(231 230 252 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\/src\/img\/waterlevel\.png\'\)\] {
   background-image: url('/src/img/waterlevel.png');
 }
 
 .bg-river-img {
   background-image: url('/src/img/river.png');
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-white {
+  --tw-gradient-from: #fff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .bg-center {
@@ -825,6 +910,30 @@ html {
 .text-sand {
   --tw-text-opacity: 1;
   color: rgb(250 247 247 / var(--tw-text-opacity));
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-55 {
+  opacity: 0.55;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .drop-shadow-md {
