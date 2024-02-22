@@ -3,7 +3,10 @@
 let backBtn = document.createElement('div');
 backBtn.classList.add('back', 'ml-10', 'mt-4');
 let backAnchor = document.createElement('a');
-backAnchor.href = '/src/index.html';
+backAnchor.addEventListener('click', () => {
+  history.back()
+})
+
 let arrowImg = document.createElement('img');
 arrowImg.classList.add('arrowImg');
 arrowImg.src = '/src/img/left-arrow-back-svgrepo-com.png';
