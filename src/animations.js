@@ -14,7 +14,7 @@ anime({
 
   anime({
     targets: '#scooter1',
-    translateY: 1000,
+    translateY: "100vh",
     direction: 'alternate',
     loop: false,
     easing: 'easeInOutQuad',
@@ -28,14 +28,11 @@ anime({
     direction: 'alternate',
     easing: 'easeInOutQuad',
     loop: true,
-    loopBegin: function() {
-      document.querySelector('#lamp').style.display = 'block';
-    },
-    loopComplete: function() {
-      document.querySelector('#lamp').style.display = 'none';
-    },
     update: function(anim) {
-      if(anim.progress > 15) {
+      if(anim.progress > 0) {
+        document.querySelector('#lamp').style.display = 'block';
+      }
+      if(anim.progress > 10) {
         document.querySelector('#lamp').style.display = 'none';
       }
       if(anim.progress > 30) {
@@ -49,7 +46,7 @@ anime({
 
   anime({
     targets: '#scooter2',
-    translateY: 940,
+    translateY: "100vh",
     loop: false,
     easing: 'easeInOutQuad',
     rotate: '5deg',
@@ -59,7 +56,7 @@ anime({
 
   anime({
     targets: '#scooter3',
-    translateY: 1000,
+    translateY: "100vh",
     loop: false,
     easing: 'easeInOutQuad',
     rotate: '-10deg',
