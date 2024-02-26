@@ -94,11 +94,7 @@
 } */
 
 .arrow-down {
-  text-align: center;
-  color: #ffffff;
-  font-size: 5vh;
-  margin-top: 30%;
-
+  font-size:3rem;
   animation: bouncing 2s infinite;
   animation-delay: 0.5s;
 }
