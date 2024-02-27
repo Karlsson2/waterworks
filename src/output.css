@@ -618,6 +618,10 @@ html {
   margin-right: 8rem;
 }
 
+.mr-60 {
+  margin-right: 15rem;
+}
+
 .mr-8 {
   margin-right: 2rem;
 }
@@ -636,14 +640,6 @@ html {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mr-20 {
-  margin-right: 5rem;
-}
-
-.mr-60 {
-  margin-right: 15rem;
 }
 
 .block {
