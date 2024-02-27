@@ -3,8 +3,416 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/output.css" rel="stylesheet" />
     <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="src/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
-  <script src="script.js" type="module"></script>
+  <body class="bg-surface-purple text-deep-blue">
+    <img
+      src="/src/img/scooter.png"
+      alt="red electric scooter"
+      class="absolute opacity-55 z-50 w-36"
+      style="right: 14%; top: -25vh"
+      id="scooter1"
+    />
+    <div
+      id="scooter2"
+      style="
+        position: absolute;
+        width: 156px;
+        height: 156px;
+        right: 41%;
+        top: -32vh;
+      "
+      class="z-50"
+    >
+      <div
+        class="absolute rounded-lg bg-gradient-to-r from-white w-2 h-3 opacity-60 z-40"
+        style="right: 25%; top: 5%; display: none"
+        id="lamp"
+      ></div>
+      <img
+        src="/src/img/scooter.png"
+        alt="red electric scooter"
+        class="absolute opacity-60 z-50 w-36"
+      />
+    </div>
+    <img
+      src="/src/img/scooter.png"
+      alt="red electric scooter"
+      class="absolute opacity-60 z-50 w-36"
+      style="left: 12%; top: -25vh"
+      id="scooter3"
+    />
+
+    <div class="header"></div>
+    <!--- Kod för vågen och första rutan med intro osv -->
+    <div class="ocean-waves">
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(154,192,249,0.5)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(154,192,249,255)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(102,159,243,255)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="7"
+            fill="rgb(77, 144, 244)"
+          />
+        </g>
+      </svg>
+    </div>
+
+    <div
+      class="w-screen h-screen bg-river-blue rounded-xl"
+      style="border-radius: 0 0 35px 35px; margin-bottom: 8vh"
+    >
+      <div class="flex flex-col pl-8 pr-8 pt-20 gap-20 items-center">
+        <div id="title">
+          <h1 class="text-sand text-4xl font-bold">Mölndalsån & Göta Älv</h1>
+          <p class="text-sand">
+            Välj station för att se aktuella flöden och nivåer i Mölndalsån och
+            Göta Älv.
+          </p>
+        </div>
+        <div class="text-sand pt-20 arrow-down">&#8595;</div>
+      </div>
+
+      <!--- Första rutan END -->
+    </div>
+    <div
+      class="bg-river-img bg-center bg-no-repeat flex flex-col items-center mt-12"
+      style="height: 3400px"
+    >
+      <!-- Nedsjöns dämme -->
+      <div
+        class="flex flex-col items-center justify-end mr-16 gap-1 more-info"
+        id="nedsjons"
+        style="height: 6%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Nedsjöns dämme"
+          >
+            Nedsjöns dämme
+          </div>
+        </a>
+      </div>
+      <!-- Härsjö dämme -->
+      <div
+        class="flex items-end justify-center ml-10 gap-1 more-info"
+        id="harsjo"
+        style="height: 10%"
+      >
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Härsjö dämme"
+          >
+            Härsjö dämme
+          </div>
+        </a>
+        <img class="h-10" src="/src/img/location.png" alt="" />
+      </div>
+      <!-- Arketjärn -->
+      <div
+        class="flex flex-col items-center justify-end ml-12 gap-1 more-info"
+        id="arketjarn"
+        style="height: 6%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Arketjärn"
+          >
+            Arketjärn
+          </div>
+        </a>
+      </div>
+      <!-- Landvettersjöns dämme -->
+      <div
+        class="flex flex-col items-center justify-end gap-1 more-info"
+        id="landvettersjons"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Landvettersjöns dämme"
+          >
+            Landvettersjöns dämme
+          </div>
+        </a>
+      </div>
+      <!-- Rådasjön -->
+      <div
+        class="flex flex-col items-center justify-end gap-1 more-info"
+        id="radasjon"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Rådasjön"
+          >
+            Rådasjön
+          </div>
+        </a>
+      </div>
+      <!-- Stensjö dämme -->
+      <div
+        class="flex flex-col items-center justify-end gap-1 more-info"
+        id="stensjo"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Stensjö dämme"
+          >
+            Stensjö dämme
+          </div>
+        </a>
+      </div>
+      <!-- Kålleredsbäcken -->
+      <div
+        class="flex items-end justify-center ml-28 gap-1 more-info"
+        id="kalleredsbacken"
+        style="height: 4.5%"
+      >
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Kålleredsbäcken"
+          >
+            Kålleredsbäcken
+          </div>
+        </a>
+        <img class="h-10" src="/src/img/location.png" alt="" />
+      </div>
+      <!-- Mölndal C -->
+      <div
+        class="flex items-end justify-center ml-10 gap-1 more-info"
+        id="molndal"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Mölndal C"
+          >
+            Mölndal C
+          </div>
+        </a>
+      </div>
+      <!-- Skårs led -->
+      <div
+        class="flex items-end justify-center mr-8 gap-1 more-info"
+        id="skars"
+        style="height: 4%"
+      >
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Skårs led"
+          >
+            Skårs led
+          </div>
+        </a>
+        <img class="h-10" src="/src/img/location.png" alt="" />
+      </div>
+      <!-- Levgrensvägen -->
+      <div
+        class="flex items-end justify-center ml-20 gap-1 more-info"
+        id="levgrensvagen"
+        style="height: 4%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Levgrensvägen"
+          >
+            Levgrensvägen
+          </div>
+        </a>
+      </div>
+      <!-- Gårda dämme -->
+      <div
+        class="flex items-end justify-center mr-32 gap-1 more-info"
+        id="garda"
+        style="height: 4%"
+      >
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Gårda dämme"
+          >
+            Gårda dämme
+          </div>
+        </a>
+        <img class="h-10" src="/src/img/location.png" alt="" />
+      </div>
+      <!-- Slussen -->
+      <div
+        class="flex items-end justify-center ml-10 gap-1 more-info"
+        id="slussen"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Slussen"
+          >
+            Slussen
+          </div>
+        </a>
+      </div>
+      <!-- Agnesberg -->
+      <div
+        class="flex items-end justify-center mr-60 gap-1 more-info"
+        id="agnesberg"
+        style="height: 2%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Agnesberg"
+          >
+            Agnesberg
+          </div>
+        </a>
+      </div>
+      <!-- Lärjeholm -->
+      <div
+        class="flex items-end justify-center mr-32 gap-1 more-info"
+        id="larjeholm"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Lärjeholm"
+          >
+            Lärjeholm
+          </div>
+        </a>
+      </div>
+      <!-- Tingstad -->
+      <div
+        class="flex items-end justify-center mr-32 gap-1 more-info"
+        id="tingstad"
+        style="height: 3.5%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Tingstad"
+          >
+            Tingstad
+          </div>
+        </a>
+      </div>
+      <!-- Eriksberg -->
+      <div
+        class="flex flex-col items-center justify-end gap-1 more-info"
+        id="eriksberg"
+        style="height: 6%"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Eriksberg"
+          >
+            Eriksberg
+          </div>
+        </a>
+      </div>
+
+      <!-- Torshamnen -->
+      <div
+        class="flex flex-col items-center justify-end gap-1"
+        style="height: 12%; z-index: 9000"
+      >
+        <img class="h-10" src="/src/img/location.png" alt="" />
+        <a href="/src/stationPage.html">
+          <div
+            class="bg-sand rounded-xl p-3 drop-shadow-md stations"
+            id="Torshamnen"
+          >
+            Torshamnen
+          </div>
+        </a>
+      </div>
+      <!--Bubble animations -->
+      <section
+        class="flex flex-col justify-center"
+        style="height: 8%; width: 390px"
+      >
+        <div class="bubbles">
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+          <div class="bubble"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="node_modules/animejs/lib/anime.min.js"></script>
+  <script src="/src/animations.js"></script>
+  <script src="/src/script.js" type="module"></script>
 </html>
